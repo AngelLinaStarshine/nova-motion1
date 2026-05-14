@@ -19,21 +19,21 @@ export default function MembershipModal({ plan, onClose, onConfirm }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28 }}>
           <div>
             <span className="section-label" style={{ marginBottom: 8 }}>Join Now</span>
-            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 32, fontWeight: 400 }}>{plan.name} Plan</h3>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 41, fontWeight: 400 }}>{plan.name} Plan</h3>
           </div>
           <button className="modal-close" onClick={onClose}>✕</button>
         </div>
 
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 48, fontWeight: 300, marginBottom: 6 }}>
-          ${plan.price}<span style={{ fontSize: 16, color: "var(--color-text-faint)" }}>/mo</span>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: 62, fontWeight: 300, marginBottom: 6 }}>
+          ${plan.price}<span style={{ fontSize: 20, color: "var(--color-text-faint)" }}>/mo</span>
         </div>
-        <p style={{ fontSize: 13, color: "var(--color-text-faint)", marginBottom: 28 }}>{plan.tagline}</p>
+        <p style={{ fontSize: 17, color: "var(--color-text-faint)", marginBottom: 28 }}>{plan.tagline}</p>
 
         <div style={{ marginBottom: 28 }}>
           {plan.features.map((f) => (
             <div key={f} style={{ display: "flex", gap: 10, alignItems: "center", padding: "10px 0", borderBottom: "1px solid var(--color-border)" }}>
-              <span style={{ color: "var(--color-gold)", fontSize: 13 }}>✓</span>
-              <span style={{ fontSize: 14, color: "var(--color-text-mid)" }}>{f}</span>
+              <span style={{ color: "var(--color-gold)", fontSize: 17}}>✓</span>
+              <span style={{ fontSize: 18, color: "var(--color-text-mid)" }}>{f}</span>
             </div>
           ))}
         </div>

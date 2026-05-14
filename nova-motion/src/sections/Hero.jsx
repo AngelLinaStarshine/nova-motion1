@@ -2,6 +2,9 @@
 //  NOVA MOTION — Hero Section
 // ─────────────────────────────────────────────────────
 
+import { HERO_PILATES_WATERMARK_SRC } from "@/data/brand";
+import Marquee from "@/sections/Marquee";
+
 export default function Hero({ onScrollTo }) {
   const STATS = [
     { num: "100+", label: "Active Members" },
@@ -13,6 +16,7 @@ export default function Hero({ onScrollTo }) {
   return (
     <section
       id="home"
+      className="hero-main"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -20,7 +24,6 @@ export default function Hero({ onScrollTo }) {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        padding: "140px 40px 100px",
         position: "relative",
         overflow: "hidden",
       }}
@@ -30,23 +33,29 @@ export default function Hero({ onScrollTo }) {
       <div style={{ position: "absolute", top: "20%", left: "8%", width: 1, height: 200, background: "linear-gradient(to bottom, transparent, #d4c9b8, transparent)", opacity: 0.6 }} />
       <div style={{ position: "absolute", top: "20%", right: "8%", width: 1, height: 200, background: "linear-gradient(to bottom, transparent, #d4c9b8, transparent)", opacity: 0.6 }} />
 
-      <span className="section-label fade-up" style={{ animationDelay: "0.1s" }}>
-        Pilates Studio · Est. 2025
-      </span>
+      <div
+        className="hero-brand-lockup fade-up"
+        style={{
+          animationDelay: "0.1s",
+          ["--hero-logo"]: `url('${HERO_PILATES_WATERMARK_SRC}')`,
+        }}
+      >
+        <span className="section-label">Pilates Studio · Est. 2025</span>
+      </div>
 
       <h1
         className="display-heading fade-up"
-        style={{ fontSize: "clamp(48px, 7.5vw, 100px)", animationDelay: "0.2s", maxWidth: 920, lineHeight: 1.08 }}
+        style={{ fontSize: "var(--fs-hero-title)", animationDelay: "0.2s", maxWidth: 920, lineHeight: 1.08 }}
       >
         Move with{" "}
         <em style={{ color: "var(--color-gold)" }}>intention.</em>
         <br />
-        <span style={{ fontSize: "clamp(28px, 4.2vw, 52px)", fontStyle: "italic", fontWeight: 300, color: "var(--color-text-muted)" }}>
+        <span style={{ fontSize: "var(--fs-hero-subtitle)", fontStyle: "italic", fontWeight: 300, color: "var(--color-text-muted)" }}>
           Restore, rebuild, reclaim.
         </span>
       </h1>
 
-      <p className="body-text fade-up" style={{ maxWidth: 520, margin: "32px auto 44px", fontSize: 16, animationDelay: "0.35s" }}>
+      <p className="body-text fade-up" style={{ maxWidth: 520, margin: "32px auto 44px", fontSize: 20, animationDelay: "0.35s" }}>
         Boutique Pilates reimagined — reformer flows, restorative stretching, and classes designed to transform your body and calm your mind.
       </p>
 
@@ -59,11 +68,23 @@ export default function Hero({ onScrollTo }) {
         </button>
       </div>
 
-      <div className="fade-up" style={{ display: "flex", gap: 48, marginTop: 72, flexWrap: "wrap", justifyContent: "center", animationDelay: "0.65s" }}>
+      <div
+        className="fade-up hero-marquee-slot"
+        style={{
+          alignSelf: "stretch",
+          width: "100%",
+          marginTop: 36,
+          animationDelay: "0.55s",
+        }}
+      >
+        <Marquee />
+      </div>
+
+      <div className="fade-up" style={{ display: "flex", gap: 48, marginTop: 28, flexWrap: "wrap", justifyContent: "center", animationDelay: "0.65s" }}>
         {STATS.map(({ num, label }) => (
           <div key={label} style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 300, color: "var(--color-text)" }}>{num}</div>
-            <div style={{ fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 4 }}>{label}</div>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 49, fontWeight: 300, color: "var(--color-text)" }}>{num}</div>
+            <div style={{ fontSize: 15, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 4 }}>{label}</div>
           </div>
         ))}
       </div>

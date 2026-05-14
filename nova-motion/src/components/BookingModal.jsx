@@ -22,7 +22,7 @@ export default function BookingModal({ slot, day, onClose, onConfirm }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28 }}>
           <div>
             <span className="section-label" style={{ marginBottom: 8 }}>Reserve Your Spot</span>
-            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 30, fontWeight: 400 }}>{slot.cls}</h3>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 39, fontWeight: 400 }}>{slot.cls}</h3>
           </div>
           <button className="modal-close" onClick={onClose}>✕</button>
         </div>
@@ -30,7 +30,7 @@ export default function BookingModal({ slot, day, onClose, onConfirm }) {
         {/* Class details */}
         <div style={{ background: "var(--color-bg)", padding: "20px", marginBottom: 28 }}>
           {[["Day", day], ["Time", slot.time], ["Instructor", slot.instructor], ["Spots left", slot.spots]].map(([k, v]) => (
-            <div key={k} style={{ display: "flex", justifyContent: "space-between", marginBottom: 10, fontSize: 14 }}>
+            <div key={k} style={{ display: "flex", justifyContent: "space-between", marginBottom: 10, fontSize: 18}}>
               <span style={{ color: "var(--color-text-faint)" }}>{k}</span>
               <span style={{ color: "var(--color-text)", fontWeight: 400 }}>{v}</span>
             </div>

@@ -73,7 +73,7 @@ export default function Footer() {
             />
             <p
               style={{
-                fontSize: 15,
+                fontSize: 19,
                 color: "#8c857e",
                 lineHeight: 1.65,
                 fontWeight: 400,
@@ -124,7 +124,7 @@ export default function Footer() {
             <div key={col.heading}>
               <div
                 style={{
-                  fontSize: 10,
+                  fontSize: 13,
                   letterSpacing: "0.22em",
                   textTransform: "uppercase",
                   color: "var(--color-gold)",
@@ -140,7 +140,7 @@ export default function Footer() {
                     to={link.to}
                     style={{
                       display: "block",
-                      fontSize: 13,
+                      fontSize: 17,
                       color: "#4a4540",
                       textDecoration: "none",
                       marginBottom: 12,
@@ -161,7 +161,7 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       display: "block",
-                      fontSize: 13,
+                      fontSize: 17,
                       color: "#4a4540",
                       textDecoration: "none",
                       marginBottom: 12,
@@ -179,7 +179,7 @@ export default function Footer() {
                 ) : (
                   <span
                     key={link.label}
-                    style={{ display: "block", fontSize: 13, color: "#4a4540", marginBottom: 12 }}
+                    style={{ display: "block", fontSize: 17, color: "#4a4540", marginBottom: 12 }}
                   >
                     {link.label}
                   </span>
@@ -203,10 +203,10 @@ export default function Footer() {
           }}
         >
           <div>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 20, color: "var(--color-text-inv)", marginBottom: 4 }}>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 26, color: "var(--color-text-inv)", marginBottom: 4 }}>
               Your first class is free.
             </div>
-            <div style={{ fontSize: 13, color: "#4a4540" }}>Sign up and claim your complimentary trial session.</div>
+            <div style={{ fontSize: 17, color: "#4a4540" }}>Sign up and claim your complimentary trial session.</div>
           </div>
           <Link to="/contact">
             <button type="button" className="btn-gold" style={{ padding: "13px 28px" }}>
@@ -225,14 +225,14 @@ export default function Footer() {
             marginBottom: 20,
           }}
         >
-          <span style={{ fontSize: 12, color: "#2e2e2e" }}>
+          <span style={{ fontSize: 16, color: "#2e2e2e" }}>
             © {new Date().getFullYear()} Nova Motion Pilates Studio. All rights reserved.
           </span>
           <div style={{ display: "flex", gap: 24 }}>
             {["Privacy Policy", "Terms of Service"].map((label) => (
               <span
                 key={label}
-                style={{ fontSize: 12, color: "#2e2e2e", cursor: "pointer", transition: "color 0.2s" }}
+                style={{ fontSize: 16, color: "#2e2e2e", cursor: "pointer", transition: "color 0.2s" }}
                 onMouseEnter={(e) => {
                   e.target.style.color = "#5a5450";
                 }}
@@ -249,7 +249,7 @@ export default function Footer() {
         <p
           style={{
             textAlign: "center",
-            fontSize: 12,
+            fontSize: 16,
             letterSpacing: "0.06em",
             color: "#4a4540",
             lineHeight: 1.75,

@@ -17,7 +17,7 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
             borderBottom: "1px solid var(--color-border)",
           }}
         >
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 400 }}>
+          <h3 style={{ fontFamily: "var(--font-display)", fontSize: 31, fontWeight: 400 }}>
             Your Cart {items.length > 0 && `(${items.reduce((s, i) => s + i.qty, 0)})`}
           </h3>
           <button className="modal-close" onClick={onClose}>✕</button>
@@ -27,10 +27,10 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
         <div style={{ flex: 1, overflowY: "auto", padding: "20px 28px" }}>
           {items.length === 0 ? (
             <div style={{ textAlign: "center", padding: "60px 0", color: "var(--color-text-faint)" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 22, marginBottom: 8 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 28, marginBottom: 8 }}>
                 Your cart is empty
               </div>
-              <p style={{ fontSize: 13 }}>Browse our collection and add items.</p>
+              <p style={{ fontSize: 17}}>Browse our collection and add items.</p>
             </div>
           ) : (
             items.map((item) => (
@@ -50,7 +50,7 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
                     width: 52, height: 52,
                     background: "var(--color-bg-warm)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 26, flexShrink: 0,
+                    fontSize: 34, flexShrink: 0,
                     overflow: "hidden",
                   }}
                 >
@@ -61,18 +61,18 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
 
                 {/* Name / price */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 16 }}>{item.name}</div>
-                  <div style={{ fontSize: 13, color: "var(--color-text-faint)" }}>${item.price}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 20}}>{item.name}</div>
+                  <div style={{ fontSize: 17, color: "var(--color-text-faint)" }}>${item.price}</div>
                 </div>
 
                 {/* Qty controls */}
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <QtyBtn onClick={() => onUpdate(item.id, -1)}>−</QtyBtn>
-                  <span style={{ fontSize: 14, minWidth: 18, textAlign: "center" }}>{item.qty}</span>
+                  <span style={{ fontSize: 18, minWidth: 18, textAlign: "center" }}>{item.qty}</span>
                   <QtyBtn onClick={() => onUpdate(item.id, 1)}>+</QtyBtn>
                   <button
                     onClick={() => onRemove(item.id)}
-                    style={{ background: "none", border: "none", cursor: "pointer", color: "#c0b8b0", fontSize: 14, marginLeft: 4, padding: 0 }}
+                    style={{ background: "none", border: "none", cursor: "pointer", color: "#c0b8b0", fontSize: 18, marginLeft: 4, padding: 0 }}
                   >
                     ✕
                   </button>
@@ -86,8 +86,8 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
         {items.length > 0 && (
           <div style={{ padding: "20px 28px", borderTop: "1px solid var(--color-border)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20 }}>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 18 }}>Total</span>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 500 }}>${total}</span>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 24}}>Total</span>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500 }}>${total}</span>
             </div>
             <button className="btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={onCheckout}>
               Checkout — ${total}
@@ -108,7 +108,7 @@ function QtyBtn({ onClick, children }) {
         border: "1px solid var(--color-border)",
         background: "none",
         cursor: "pointer",
-        fontSize: 14, lineHeight: 1,
+        fontSize: 18, lineHeight: 1,
         display: "flex", alignItems: "center", justifyContent: "center",
       }}
     >

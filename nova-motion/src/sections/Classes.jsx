@@ -23,7 +23,7 @@ export default function Classes({ onClassClick }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 }}>
           <div>
             <span className="section-label">Our Classes</span>
-            <h2 className="display-heading" style={{ fontSize: "clamp(36px, 4vw, 56px)" }}>
+            <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)" }}>
               Every body.<br /><em style={{ color: "var(--color-gold)" }}>Every level.</em>
             </h2>
           </div>
@@ -46,7 +46,7 @@ export default function Classes({ onClassClick }) {
                 </div>
               ) : (
                 <div style={{ height: 140, background: cls.accent + "14", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 0 }}>
-                  <span style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: cls.accent, opacity: 0.7 }}>📸 Add image</span>
+                  <span style={{ fontSize: 13, letterSpacing: "0.15em", textTransform: "uppercase", color: cls.accent, opacity: 0.7 }}>📸 Add image</span>
                 </div>
               )}
 
@@ -54,15 +54,15 @@ export default function Classes({ onClassClick }) {
               <div style={{ padding: "24px 28px 28px" }}>
                 <div style={{ width: 28, height: 3, background: cls.accent, marginBottom: 16 }} />
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
-                  <span style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: cls.accent, background: cls.accent + "18", padding: "4px 10px" }}>
+                  <span style={{ fontSize: 13, letterSpacing: "0.15em", textTransform: "uppercase", color: cls.accent, background: cls.accent + "18", padding: "4px 10px" }}>
                     {cls.category}
                   </span>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: 20 }}>{cls.price}</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: 26}}>{cls.price}</span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 400, marginBottom: 10, lineHeight: 1.2 }}>{cls.name}</h3>
-                <p style={{ fontSize: 14, color: "var(--color-text-faint)", fontWeight: 300, lineHeight: 1.7, marginBottom: 20 }}>{cls.description}</p>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 34, fontWeight: 400, marginBottom: 10, lineHeight: 1.2 }}>{cls.name}</h3>
+                <p style={{ fontSize: 18, color: "var(--color-text-faint)", fontWeight: 300, lineHeight: 1.7, marginBottom: 20 }}>{cls.description}</p>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--color-border)", paddingTop: 16 }}>
-                  <span style={{ fontSize: 12, color: "var(--color-text-faint)" }}>⏱ {cls.duration} · {cls.instructor.split(" ")[0]}</span>
+                  <span style={{ fontSize: 16, color: "var(--color-text-faint)" }}>⏱ {cls.duration} · {cls.instructor.split(" ")[0]}</span>
                   {/* Intensity dots */}
                   <div style={{ display: "flex", gap: 5 }}>
                     {[0,1,2].map((i) => (

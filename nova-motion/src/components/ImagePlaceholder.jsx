@@ -56,7 +56,7 @@ export default function ImagePlaceholder({
       {/* Label */}
       <span
         style={{
-          fontSize: 10,
+          fontSize: 13,
           letterSpacing: "0.12em",
           textTransform: "uppercase",
           color: text,

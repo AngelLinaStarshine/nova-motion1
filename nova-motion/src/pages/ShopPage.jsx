@@ -28,10 +28,10 @@ export default function ShopPage({ onAddToCart }) {
             ["Members save",    "10–20% on all orders"],
           ].map(([title, sub]) => (
             <div key={title} style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 18, color: "var(--color-text-inv)", marginBottom: 4 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 24, color: "var(--color-text-inv)", marginBottom: 4 }}>
                 {title}
               </div>
-              <div style={{ fontSize: 12, color: "#6a6460", letterSpacing: "0.05em" }}>{sub}</div>
+              <div style={{ fontSize: 16, color: "#6a6460", letterSpacing: "0.05em" }}>{sub}</div>
             </div>
           ))}
         </div>

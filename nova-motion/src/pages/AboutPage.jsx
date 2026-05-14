@@ -66,17 +66,17 @@ export default function AboutPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span className="section-label">What We Stand For</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px,4vw,50px)", fontWeight: 300 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>
               Our values
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 32 }}>
             {VALUES.map((v, i) => (
               <div key={i} style={{ borderTop: "2px solid var(--color-gold)", paddingTop: 24 }}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 400, marginBottom: 12 }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 400, marginBottom: 12 }}>
                   {v.title}
                 </h3>
-                <p style={{ fontSize: 14, color: "var(--color-text-muted)", lineHeight: 1.8, fontWeight: 300 }}>
+                <p style={{ fontSize: 18, color: "var(--color-text-muted)", lineHeight: 1.8, fontWeight: 300 }}>
                   {v.body}
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span className="section-label">Since 2025</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px,4vw,50px)", fontWeight: 300 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>
               Our journey
             </h2>
           </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 }}
               >
                 <div style={{ minWidth: 72, textAlign: "right", paddingTop: 2 }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: 20, color: "var(--color-gold)", fontWeight: 300 }}>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: 26, color: "var(--color-gold)", fontWeight: 300 }}>
                     {item.year}
                   </span>
                 </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                     position: "relative", zIndex: 1,
                   }}
                 />
-                <p style={{ fontSize: 15, color: "var(--color-text-muted)", lineHeight: 1.7, fontWeight: 300, paddingTop: 0, flex: 1 }}>
+                <p style={{ fontSize: 19, color: "var(--color-text-muted)", lineHeight: 1.7, fontWeight: 300, paddingTop: 0, flex: 1 }}>
                   {item.event}
                 </p>
               </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
       {/* ── CTA ── */}
       <div style={{ textAlign: "center", padding: "70px 40px", background: "var(--color-bg-dark)" }}>
         <span className="section-label">Join us</span>
-        <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,3vw,46px)", fontWeight: 300, color: "var(--color-text-inv)", marginBottom: 24 }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-heading-sm)", fontWeight: 300, color: "var(--color-text-inv)", marginBottom: 24 }}>
           Come move with us.
         </h3>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
