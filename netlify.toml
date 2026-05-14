@@ -1,0 +1,16 @@
+# Netlify — use this file ONLY when Netlify "Base directory" = `nova-motion`
+# (the folder that contains this file + package.json).
+#
+# If your repo root is the parent folder (`nova-motion1`) and Base directory
+# is empty, use ../netlify.toml at repo root instead — it builds `nova-motion/`
+# and publishes `nova-motion/dist`.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Client-side routing (React Router): avoid 404 on refresh / deep links
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
