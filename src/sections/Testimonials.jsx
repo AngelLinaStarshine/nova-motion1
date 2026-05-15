@@ -40,7 +40,7 @@ export default function Testimonials() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28, marginTop: 40 }}>
           {TESTIMONIALS.map((t) => (
             <div key={t.name} style={{ background: "var(--color-bg-dark-2)", padding: "32px 28px", borderTop: "2px solid var(--color-gold)" }}>
-              <p style={{ fontFamily: "var(--font-display)", fontSize: 21, fontStyle: "italic", color: "var(--color-text-inv)", lineHeight: 1.65, marginBottom: 28, fontWeight: 300 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 27, fontStyle: "italic", color: "var(--color-text-inv)", lineHeight: 1.65, marginBottom: 28, fontWeight: 300 }}>
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -49,13 +49,13 @@ export default function Testimonials() {
                     <img src={t.avatar} alt={t.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                   ) : (
                     <div style={{ width: "100%", height: "100%", background: "var(--color-gold)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: "var(--font-display)", fontSize: 18, color: "#fff" }}>{t.initial}</span>
+                      <span style={{ fontFamily: "var(--font-display)", fontSize: 24, color: "#fff" }}>{t.initial}</span>
                     </div>
                   )}
                 </div>
                 <div>
-                  <div style={{ fontSize: 13, color: "var(--color-gold)", fontWeight: 500 }}>{t.name}</div>
-                  <div style={{ fontSize: 11, color: "#5a5450", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 2 }}>{t.since}</div>
+                  <div style={{ fontSize: 17, color: "var(--color-gold)", fontWeight: 500 }}>{t.name}</div>
+                  <div style={{ fontSize: 15, color: "#5a5450", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 2 }}>{t.since}</div>
                 </div>
               </div>
             </div>

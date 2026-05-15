@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { LOGO_SRC } from "../data/brand";
+import { NAVBAR_LOGO_SRC, LOGO_ALT } from "../data/brand";
 
 const NAV_LINKS = [
   { label: "Schedule",   to: "/schedule"   },
@@ -45,7 +45,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
           maxWidth: 1320,
           margin: "0 auto",
           padding: "0 40px",
-          minHeight: 88,
+          minHeight: 124,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -66,8 +66,8 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
           aria-label="Nova Motion home"
         >
           <img
-            src={LOGO_SRC}
-            alt=""
+            src={NAVBAR_LOGO_SRC}
+            alt={LOGO_ALT}
             decoding="async"
             className="navbar-logo-img"
           />
@@ -113,7 +113,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
                   borderRadius: "50%",
                   width: 16,
                   height: 16,
-                  fontSize: 9,
+                  fontSize: 11,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

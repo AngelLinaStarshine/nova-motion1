@@ -49,9 +49,9 @@ export default function About({ onClasses }) {
         ) : (
           /* Placeholder */
           <div style={{ position: "absolute", inset: 0, background: "var(--color-bg-warm)", border: "1px solid var(--color-border)", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 12 }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 72, fontWeight: 300, color: "#c8bfb0", lineHeight: 1 }}>N</div>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 93, fontWeight: 300, color: "#c8bfb0", lineHeight: 1 }}>N</div>
             <div style={{ width: 1, height: 50, background: "#c8bfb0" }} />
-            <div style={{ fontSize: 10, letterSpacing: "0.25em", textTransform: "uppercase", color: "#c8bfb0" }}>
+            <div style={{ fontSize: 13, letterSpacing: "0.25em", textTransform: "uppercase", color: "#c8bfb0" }}>
               📸 800 × 1000 px
             </div>
           </div>
@@ -63,9 +63,9 @@ export default function About({ onClasses }) {
             <img src={BADGE_IMAGE} alt="Studio detail" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           ) : (
             <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 6 }}>
-              <span style={{ fontFamily: "var(--font-display)", fontSize: 42, fontWeight: 300 }}>2025</span>
-              <span style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)" }}>Est. This Year</span>
-              <span style={{ fontSize: 9, color: "#c8bfb0", marginTop: 4 }}>📸 300×300</span>
+              <span style={{ fontFamily: "var(--font-display)", fontSize: 54, fontWeight: 300 }}>2025</span>
+              <span style={{ fontSize: 13, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)" }}>Est. This Year</span>
+              <span style={{ fontSize: 11, color: "#c8bfb0", marginTop: 4 }}>📸 300×300</span>
             </div>
           )}
         </div>
@@ -74,7 +74,7 @@ export default function About({ onClasses }) {
       {/* ── Right: text column ── */}
       <div>
         <span className="section-label">Our Story</span>
-        <h2 className="display-heading" style={{ fontSize: "clamp(38px, 4vw, 58px)", marginBottom: 28 }}>
+        <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)", marginBottom: 28 }}>
           Where science<br />meets <em style={{ color: "var(--color-gold)" }}>serenity.</em>
         </h2>
         <p className="body-text" style={{ marginBottom: 20 }}>
@@ -87,8 +87,8 @@ export default function About({ onClasses }) {
         <div style={{ display: "flex", gap: 32, marginBottom: 40, flexWrap: "wrap" }}>
           {HIGHLIGHTS.map(({ val, label }) => (
             <div key={label}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 500 }}>{val}</div>
-              <div style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 4 }}>{label}</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 500 }}>{val}</div>
+              <div style={{ fontSize: 15, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>

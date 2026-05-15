@@ -16,10 +16,10 @@ export default function Schedule({ onBook, bookedSlots, darkBg = true }) {
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>
           <span className="section-label">Weekly Schedule</span>
-          <h2 className="display-heading" style={{ fontSize: "clamp(36px, 4vw, 56px)", color: darkBg ? "var(--color-text-inv)" : "var(--color-text)", marginBottom: 12 }}>
+          <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)", color: darkBg ? "var(--color-text-inv)" : "var(--color-text)", marginBottom: 12 }}>
             Plan your week
           </h2>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#8c857e", fontWeight: 300 }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 19, color: "#8c857e", fontWeight: 300 }}>
             Tap any class to reserve your spot instantly.
           </p>
         </div>
@@ -59,31 +59,31 @@ export default function Schedule({ onBook, bookedSlots, darkBg = true }) {
 
                 {/* Time */}
                 <div style={{ minWidth: 80 }}>
-                  <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 500, color: "var(--color-text-inv)" }}>
+                  <span style={{ fontFamily: "var(--font-body)", fontSize: 17, fontWeight: 500, color: "var(--color-text-inv)" }}>
                     {slot.time}
                   </span>
                 </div>
 
                 {/* Class info */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 400, color: "var(--color-text-inv)", lineHeight: 1.2 }}>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 400, color: "var(--color-text-inv)", lineHeight: 1.2 }}>
                     {slot.cls}
                   </div>
-                  <div style={{ fontSize: 12, color: "#8c857e", marginTop: 3 }}>with {slot.instructor}</div>
+                  <div style={{ fontSize: 16, color: "#8c857e", marginTop: 3 }}>with {slot.instructor}</div>
                 </div>
 
                 {/* CTA / booked state */}
                 <div style={{ textAlign: "right", flexShrink: 0 }}>
                   {booked ? (
-                    <span style={{ background: accent + "25", color: accent, fontSize: 11, padding: "5px 14px", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                    <span style={{ background: accent + "25", color: accent, fontSize: 15, padding: "5px 14px", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                       Booked ✓
                     </span>
                   ) : (
                     <>
-                      <div style={{ fontSize: 12, color: slot.spots <= 3 ? "#e07e5a" : "#8c857e", marginBottom: 6 }}>
+                      <div style={{ fontSize: 16, color: slot.spots <= 3 ? "#e07e5a" : "#8c857e", marginBottom: 6 }}>
                         {slot.spots} spot{slot.spots !== 1 ? "s" : ""} left
                       </div>
-                      <button className="btn-gold" style={{ padding: "8px 18px", fontSize: 11 }}>
+                      <button className="btn-gold" style={{ padding: "8px 18px", fontSize: 15}}>
                         Reserve
                       </button>
                     </>

@@ -86,13 +86,13 @@ export default function ContactPage({ onToastShow }) {
             {INFO.map((block) => (
               <div key={block.heading} style={{ marginBottom: 40 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                  <span style={{ fontSize: 18 }}>{block.icon}</span>
-                  <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-gold)" }}>
+                  <span style={{ fontSize: 24}}>{block.icon}</span>
+                  <span style={{ fontSize: 15, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-gold)" }}>
                     {block.heading}
                   </span>
                 </div>
                 {block.lines.map((l) => (
-                  <div key={typeof l === "string" ? l : l.text} style={{ fontSize: 15, color: "var(--color-text-muted)", lineHeight: 1.8, fontWeight: 300 }}>
+                  <div key={typeof l === "string" ? l : l.text} style={{ fontSize: 19, color: "var(--color-text-muted)", lineHeight: 1.8, fontWeight: 300 }}>
                     {typeof l === "string" ? (
                       l
                     ) : (
@@ -120,11 +120,11 @@ export default function ContactPage({ onToastShow }) {
                 marginTop: 8,
               }}
             >
-              <span style={{ fontSize: 32 }}>🗺️</span>
-              <span style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)" }}>
+              <span style={{ fontSize: 41}}>🗺️</span>
+              <span style={{ fontSize: 15, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)" }}>
                 Embed Google Map here
               </span>
-              <span style={{ fontSize: 12, color: "#b0a9a2" }}>Replace with an &lt;iframe&gt; from Google Maps</span>
+              <span style={{ fontSize: 16, color: "#b0a9a2" }}>Replace with an &lt;iframe&gt; from Google Maps</span>
             </div>
           </div>
 
@@ -138,10 +138,10 @@ export default function ContactPage({ onToastShow }) {
                   borderLeft: "3px solid var(--color-gold)",
                 }}
               >
-                <div style={{ fontFamily: "var(--font-display)", fontSize: 28, marginBottom: 12 }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 36, marginBottom: 12 }}>
                   Message received!
                 </div>
-                <p style={{ fontSize: 15, color: "var(--color-text-muted)", lineHeight: 1.7, fontWeight: 300 }}>
+                <p style={{ fontSize: 19, color: "var(--color-text-muted)", lineHeight: 1.7, fontWeight: 300 }}>
                   Thanks, <strong>{form.name.split(" ")[0]}</strong>. We'll reply to <strong>{form.email}</strong> within one business day.
                 </p>
                 <button
@@ -192,7 +192,7 @@ export default function ContactPage({ onToastShow }) {
                     border: "1px solid var(--color-border)",
                     background: "transparent",
                     fontFamily: "var(--font-body)",
-                    fontSize: 14,
+                    fontSize: 18,
                     color: "var(--color-text)",
                     outline: "none",
                     marginBottom: 12,
@@ -228,7 +228,7 @@ export default function ContactPage({ onToastShow }) {
                   Send Message
                 </button>
 
-                <p style={{ fontSize: 12, color: "var(--color-text-faint)", marginTop: 14, textAlign: "center" }}>
+                <p style={{ fontSize: 16, color: "var(--color-text-faint)", marginTop: 14, textAlign: "center" }}>
                   We reply to every message within one business day.
                 </p>
               </div>
@@ -242,6 +242,6 @@ export default function ContactPage({ onToastShow }) {
 
 function FieldError({ msg }) {
   return (
-    <p style={{ fontSize: 12, color: "#c0533a", marginBottom: 12, marginTop: 2 }}>{msg}</p>
+    <p style={{ fontSize: 16, color: "#c0533a", marginBottom: 12, marginTop: 2 }}>{msg}</p>
   );
 }

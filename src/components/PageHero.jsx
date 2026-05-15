@@ -17,10 +17,10 @@ export default function PageHero({ label, title, subtitle, bgImage }) {
     <div
       id="page-top"
       style={{
-        paddingTop: 140,
-        paddingBottom: 80,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingTop: "clamp(5.5rem, 10vw + 3rem, 8.75rem)",
+        paddingBottom: "clamp(3.25rem, 6vw + 2rem, 5rem)",
+        paddingLeft: "clamp(1rem, 4vw, 2.5rem)",
+        paddingRight: "clamp(1rem, 4vw, 2.5rem)",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
@@ -44,7 +44,7 @@ export default function PageHero({ label, title, subtitle, bgImage }) {
       <h1
         className="display-heading fade-up"
         style={{
-          fontSize: "clamp(36px, 5vw, 72px)",
+          fontSize: "var(--fs-page-title)",
           animationDelay: "0.1s",
           maxWidth: 720,
           margin: "0 auto 16px",

@@ -36,6 +36,13 @@
 
   --transition: 0.25s ease;
   --transition-slow: 0.4s ease;
+
+  /* Fluid display type — rem follows html; vw scales by viewport */
+  --fs-hero-title: clamp(2.55rem, 1rem + 6vw, 7.25rem);
+  --fs-hero-subtitle: clamp(1.48rem, 0.85rem + 3.1vw, 3.85rem);
+  --fs-page-title: clamp(2.25rem, 0.95rem + 4.8vw, 5.65rem);
+  --fs-section-title: clamp(2.05rem, 0.95rem + 3.9vw, 4.55rem);
+  --fs-section-heading-sm: clamp(1.82rem, 0.88rem + 3.1vw, 3.75rem);
 }
 
 /* ── RESET ──────────────────────────────────── */
@@ -48,10 +55,13 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  /* Slightly larger type on wide screens; comfortable minimum on phones */
+  font-size: clamp(17px, 14px + 0.85vw, 23px);
 }
 
 body {
   font-family: var(--font-body);
+  font-size: 1rem;
   background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
@@ -105,7 +115,7 @@ button {
 /* ── TYPOGRAPHY ─────────────────────────────── */
 .section-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: clamp(0.8rem, 0.72rem + 0.35vw, 1.05rem);
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -123,10 +133,55 @@ button {
 
 .body-text {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: clamp(1.02rem, 0.96rem + 0.22vw, 1.2rem);
   font-weight: 300;
   line-height: 1.8;
   color: var(--color-text-muted);
+}
+
+/* Hero: logo watermark behind “Pilates Studio” line */
+.hero-brand-lockup {
+  position: relative;
+  display: inline-block;
+  padding: 1em 5rem 1.15em;
+  margin-bottom: 4px;
+}
+.hero-brand-lockup::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, min(99vw, 64rem));
+  height: min(420px, min(56vw, 28rem));
+  background-image: var(--hero-logo, url("/logo-hero-pilates-watermark.png"));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-brand-lockup .section-label {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+/* Home hero: breathing room on small / tall / wide viewports */
+#home.hero-main {
+  padding: clamp(5.25rem, 9vh + 2.5rem, 8.75rem) clamp(1rem, 4vw, 2.5rem) clamp(3.25rem, 7vh + 1.75rem, 6.25rem);
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-outline,
+  .btn-gold {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
 }
 
 /* ── BUTTONS ─────────────────────────────────── */
@@ -138,7 +193,7 @@ button {
   background: var(--color-bg-dark);
   color: var(--color-text-inv);
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -159,7 +214,7 @@ button {
   background: transparent;
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -179,7 +234,7 @@ button {
   background: var(--color-gold);
   color: #fff;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -201,7 +256,7 @@ button {
   cursor: pointer;
   color: var(--color-text-muted);
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 17px;
   transition: color var(--transition);
   padding: 0;
 }
@@ -214,20 +269,29 @@ button {
 }
 
 .site-header .navbar-logo-img {
-  height: 64px;
+  height: 118px;
   width: auto;
+  max-height: min(118px, 17vh);
   display: block;
+}
+
+@media (max-width: 900px) {
+  .site-header .navbar-logo-img {
+    height: 100px;
+    max-height: min(100px, 15vh);
+  }
 }
 
 @media (max-width: 640px) {
   .site-header .navbar-logo-img {
-    height: 54px;
+    height: 88px;
+    max-height: min(88px, 14vh);
   }
 }
 
 .site-header nav.navbar-desktop .navbar-link {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -254,7 +318,7 @@ button {
 
 .site-header .navbar-mobile-panel .navbar-link {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(247, 244, 239, 0.88);
@@ -281,7 +345,7 @@ button {
 /* ── NAVIGATION ─────────────────────────────── */
 .nav-link {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -373,7 +437,7 @@ button {
 .filter-chip {
   padding: 8px 20px;
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -391,7 +455,7 @@ button {
 .day-btn {
   padding: 10px 18px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -428,7 +492,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 26px;
   color: var(--color-text-faint);
   line-height: 1;
   padding: 0;
@@ -460,7 +524,7 @@ button {
   color: var(--color-text-inv);
   padding: 14px 28px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 17px;
   z-index: 2000;
   white-space: nowrap;
   animation: toastIn 0.3s ease;
@@ -474,7 +538,7 @@ button {
   border: 1px solid var(--color-border);
   background: transparent;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 18px;
   color: var(--color-text);
   outline: none;
   transition: border-color var(--transition);

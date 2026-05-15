@@ -43,7 +43,7 @@ export default function MembershipPage({ onPlanClick }) {
       <section style={{ padding: "90px 40px", maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span className="section-label">Frequently Asked</span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(30px,3vw,46px)", fontWeight: 300 }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>
             Questions
           </h2>
         </div>
@@ -76,12 +76,12 @@ function FAQItem({ q, a }) {
           padding: "22px 0",
         }}
       >
-        <span style={{ fontFamily: "var(--font-display)", fontSize: 19, fontWeight: 400, flex: 1, paddingRight: 16 }}>
+        <span style={{ fontFamily: "var(--font-display)", fontSize: 25, fontWeight: 400, flex: 1, paddingRight: 16 }}>
           {q}
         </span>
         <span
           style={{
-            fontSize: 20,
+            fontSize: 26,
             color: "var(--color-gold)",
             transform: open ? "rotate(45deg)" : "none",
             transition: "transform 0.25s ease",
@@ -96,7 +96,7 @@ function FAQItem({ q, a }) {
         <div
           className="slide-dn"
           style={{
-            fontSize: 14,
+            fontSize: 18,
             color: "var(--color-text-muted)",
             lineHeight: 1.8,
             fontWeight: 300,

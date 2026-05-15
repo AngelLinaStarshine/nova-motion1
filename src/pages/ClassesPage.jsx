@@ -22,7 +22,7 @@ export default function ClassesPage({ onClassClick }) {
       {/* Secondary CTA */}
       <div style={{ textAlign: "center", padding: "70px 40px", background: "var(--color-bg-warm)" }}>
         <span className="section-label">Ready to start?</span>
-        <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px,3vw,44px)", fontWeight: 300, marginBottom: 24 }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-heading-sm)", fontWeight: 300, marginBottom: 24 }}>
           Book your first class today.
         </h3>
         <button className="btn-primary" onClick={() => navigate("/schedule")}>

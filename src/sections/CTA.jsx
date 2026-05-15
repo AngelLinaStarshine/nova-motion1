@@ -23,7 +23,7 @@ export default function CTA({ onToast }) {
     <section style={{ padding: "90px 40px", textAlign: "center" }}>
       <div style={{ maxWidth: 540, margin: "0 auto" }}>
         <span className="section-label">Join the Community</span>
-        <h2 className="display-heading" style={{ fontSize: "clamp(32px, 4vw, 50px)", marginBottom: 16 }}>
+        <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)", marginBottom: 16 }}>
           Your first class<br /><em style={{ color: "var(--color-gold)" }}>is on us.</em>
         </h2>
         <p className="body-text" style={{ marginBottom: 36 }}>
@@ -32,8 +32,8 @@ export default function CTA({ onToast }) {
 
         {submitted ? (
           <div style={{ background: "var(--color-bg-warm)", padding: "28px 32px", borderLeft: "3px solid var(--color-gold)", textAlign: "left" }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 24, marginBottom: 10 }}>Thank you, {name.split(" ")[0]}!</div>
-            <p style={{ fontSize: 14, color: "var(--color-text-muted)", lineHeight: 1.7 }}>
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 31, marginBottom: 10 }}>Thank you, {name.split(" ")[0]}!</div>
+            <p style={{ fontSize: 18, color: "var(--color-text-muted)", lineHeight: 1.7 }}>
               We'll reach out to {email} within 24 hours to schedule your complimentary class.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function CTA({ onToast }) {
             >
               Claim My Free Class
             </button>
-            <p style={{ fontSize: 11, color: "var(--color-text-faint)", marginTop: 14, letterSpacing: "0.05em" }}>
+            <p style={{ fontSize: 15, color: "var(--color-text-faint)", marginTop: 14, letterSpacing: "0.05em" }}>
               No commitment required. Cancel anytime.
             </p>
           </>
