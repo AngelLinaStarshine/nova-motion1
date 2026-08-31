@@ -16,14 +16,8 @@ export default function PageHero({ label, title, subtitle, bgImage }) {
   return (
     <div
       id="page-top"
+      className="page-hero"
       style={{
-        paddingTop: "clamp(5.5rem, 10vw + 3rem, 8.75rem)",
-        paddingBottom: "clamp(3.25rem, 6vw + 2rem, 5rem)",
-        paddingLeft: "clamp(1rem, 4vw, 2.5rem)",
-        paddingRight: "clamp(1rem, 4vw, 2.5rem)",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
         background: bgImage
           ? `linear-gradient(rgba(28,28,28,0.55), rgba(28,28,28,0.55)), url(${bgImage}) center/cover no-repeat`
           : "var(--color-bg-warm)",

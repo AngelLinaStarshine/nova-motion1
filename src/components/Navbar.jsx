@@ -56,7 +56,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
               className="navbar-brand-logo"
             />
             <span className="navbar-brand-wordmark">
-              Nova <em>Motion</em>
+              Nova <span className="brand-motion">Motion</span>
             </span>
           </span>
         </button>

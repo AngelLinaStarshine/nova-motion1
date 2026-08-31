@@ -7,7 +7,7 @@ import {
   BRAND_SLOGAN,
   BRAND_TAGLINE_SHORT,
   LOGO_ALT,
-  LOGO_SRC,
+  NAVBAR_LOGO_SRC,
   STUDIO_EMAIL,
   STUDIO_INSTAGRAM_URL,
   STUDIO_PHONE_DISPLAY,
@@ -59,11 +59,11 @@ export default function Footer() {
       <div className="page-container">
 
         <div className="footer-grid">
-          <div>
+          <div className="footer-brand-col">
             <img
-              src={LOGO_SRC}
+              src={NAVBAR_LOGO_SRC}
               alt={LOGO_ALT}
-              style={{ height: 48, width: "auto", display: "block", marginBottom: 16 }}
+              className="footer-logo"
             />
             <p
               style={{
