@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:shop": "vite --config vite.shop.config.js --port 5174",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:shop": "vite build --config vite.shop.config.js",
+    "preview": "vite preview",
+    "preview:shop": "vite preview --config vite.shop.config.js --port 4174"
   },
   "dependencies": {
     "react": "^18.3.1",

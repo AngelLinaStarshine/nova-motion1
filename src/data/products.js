@@ -1,86 +1,112 @@
 // ─────────────────────────────────────────────────────
-//  NOVA MOTION — Studio Collection (Shop) Data
-//
-//  📸 IMAGE SLOTS:
-//    Add an `image` field pointing to your file:
-//    image: "/src/assets/images/products/grip-socks.jpg"
-//    Recommended size: 600 × 600 px (square)
+//  NOVA MOTION — Shop Products
 // ─────────────────────────────────────────────────────
+
+import shopHero             from "@/assets/images/products/shop-hero.jpg";
+import casualWhite          from "@/assets/images/products/casual-white.jpg";
+import casualWhite2         from "@/assets/images/products/casual-white-2.jpg";
+import casualWhite3         from "@/assets/images/products/casual-white-3.jpg";
+import casualWhite4         from "@/assets/images/products/casual-white-4.jpg";
+import casualBlack          from "@/assets/images/products/casual-black.jpg";
+import casualBlack2         from "@/assets/images/products/casual-black-2.jpg";
+import casualBlackLifestyle from "@/assets/images/products/casual-black-lifestyle.jpg";
+
+export const WHITE_SOCK_IMAGES = [
+  casualWhite,
+  casualWhite2,
+  casualWhite3,
+  casualWhite4,
+];
+
+export const BLACK_SOCK_IMAGES = [
+  casualBlack,
+  casualBlack2,
+  casualBlackLifestyle,
+];
+
+export const SOCK_SIZE_OPTIONS = [
+  { id: "women_sm",  label: "Women S/M",  shoeRange: "4\u20138.5" },
+  { id: "women_lxl", label: "Women L/XL", shoeRange: "9\u201312" },
+  { id: "men_sm",    label: "Men S/M",    shoeRange: "6\u20139.5" },
+  { id: "men_lxl",   label: "Men L/XL",   shoeRange: "10\u201313" },
+];
+
+export const SOCK_SIZES = SOCK_SIZE_OPTIONS.map((s) => s.id);
+
+export const SHOP_HERO_IMAGE = shopHero;
+
+export const CASUAL_SOCK_DETAILS = {
+  tagline:
+    "Built for everyday comfort. Made to keep up with you.",
+  body: [
+    "Experience the perfect balance of softness, breathability, and dependable fit. Our casual socks are designed for the moments that make up your day, from busy mornings to relaxed evenings.",
+    "Soft where it matters. Supportive where you need it. Reliable every day.",
+  ],
+  highlights: [
+    "Comfortable all-day fit",
+    "Breathable, lightweight feel",
+    "Flexible construction that moves with you",
+    "Designed for everyday durability",
+    "Timeless style for any occasion",
+  ],
+};
 
 export const PRODUCTS = [
   {
-    id: 1,
-    name: "Nova Grip Socks",
-    category: "Accessories",
+    id: "casual-white",
+    name: "Casual Crew Socks",
+    colorLabel: "White",
+    category: "Socks",
+    sockType: "casual",
     price: 28,
-    badge: "Bestseller",   // null | "New" | "Bestseller" | "Sale"
-    description: "Non-slip pilates grip socks with reinforced arch support. Available in ivory, sage and charcoal.",
-
-    // 📸 REPLACE with your product photo:
-    // image: "/src/assets/images/products/grip-socks.jpg",
-    image: null,
-    emoji: "🧦",           // Fallback icon — remove once image is added
-  },
-  {
-    id: 2,
-    name: "Studio Reformer Bag",
-    category: "Gear",
-    price: 95,
     badge: null,
-    description: "Compact, water-resistant carry-all designed for your studio essentials. Fits mat, socks and a change of clothes.",
-
-    // 📸 image: "/src/assets/images/products/reformer-bag.jpg",
-    image: null,
-    emoji: "👜",
+    comingSoon: false,
+    details: CASUAL_SOCK_DETAILS,
+    image: casualWhite,
+    images: WHITE_SOCK_IMAGES,
+    sizes: SOCK_SIZES,
   },
   {
-    id: 3,
-    name: "Resistance Band Set",
-    category: "Equipment",
-    price: 45,
-    badge: null,
-    description: "Set of three fabric resistance bands (light, medium, heavy). Perfect for home practice and warm-ups.",
-
-    // 📸 image: "/src/assets/images/products/resistance-bands.jpg",
-    image: null,
-    emoji: "🎽",
+    id: "casual-black",
+    name: "Casual Crew Socks",
+    colorLabel: "Black",
+    category: "Socks",
+    sockType: "casual",
+    price: 28,
+    badge: "Bestseller",
+    comingSoon: false,
+    details: CASUAL_SOCK_DETAILS,
+    image: casualBlack,
+    images: BLACK_SOCK_IMAGES,
+    sizes: SOCK_SIZES,
   },
   {
-    id: 4,
-    name: "Nova Motion Mat",
-    category: "Equipment",
-    price: 120,
-    badge: "New",
-    description: "6mm premium eco-rubber pilates mat with alignment guides. Studio-quality, non-slip both sides.",
-
-    // 📸 image: "/src/assets/images/products/pilates-mat.jpg",
-    image: null,
-    emoji: "🟫",
-  },
-  {
-    id: 5,
-    name: "Body Roller",
-    category: "Recovery",
-    price: 65,
-    badge: null,
-    description: "High-density foam roller for deep tissue myofascial release. Ideal for post-class recovery.",
-
-    // 📸 image: "/src/assets/images/products/body-roller.jpg",
-    image: null,
-    emoji: "🪵",
-  },
-  {
-    id: 6,
-    name: "Studio Bottle 750ml",
-    category: "Accessories",
-    price: 38,
-    badge: null,
-    description: "Insulated stainless steel water bottle. Leak-proof lid, keeps cold 24 hours. Matte finish.",
-
-    // 📸 image: "/src/assets/images/products/studio-bottle.jpg",
-    image: null,
-    emoji: "🧴",
+    id: "pilates-grip",
+    name: "Pilates Grip Socks",
+    colorLabel: null,
+    category: "Socks",
+    sockType: "pilates",
+    price: null,
+    badge: "Coming Soon",
+    comingSoon: true,
+    description:
+      "Studio grip socks with arch support and nonslip soles. Launching soon. Join the waitlist at the studio.",
+    image: casualWhite,
+    images: [casualWhite],
+    sizes: [],
   },
 ];
 
-export const PRODUCT_CATEGORIES = ["All", ...new Set(PRODUCTS.map((p) => p.category))];
+export const CASUAL_SOCKS = PRODUCTS.filter((p) => p.sockType === "casual");
+export const PRODUCT_CATEGORIES = ["Socks"];
+
+export function productCartId(product, size) {
+  return `${product.id}_${size}`;
+}
+
+export function productDisplayName(product, sizeId) {
+  const option = SOCK_SIZE_OPTIONS.find((s) => s.id === sizeId);
+  const sizeLabel = option?.label ?? sizeId;
+  const color = product.colorLabel ? `, ${product.colorLabel}` : "";
+  return `${product.name}${color}, ${sizeLabel}`;
+}
