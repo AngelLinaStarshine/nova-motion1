@@ -41,18 +41,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
         transition: "border-color 0.35s ease",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1320,
-          margin: "0 auto",
-          padding: "0 40px",
-          minHeight: 124,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 24,
-        }}
-      >
+      <div className="site-header-inner">
         <button
           onClick={() => navigate("/")}
           style={{
@@ -92,7 +81,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
           )}
         </nav>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 16, flexShrink: 0 }}>
+        <div className="navbar-actions">
           <button
             type="button"
             className="navbar-cart-btn"
@@ -165,7 +154,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
       </div>
 
       {mobileOpen && (
-        <div className="navbar-mobile-panel slide-dn" style={{ padding: "24px 40px 32px" }}>
+        <div className="navbar-mobile-panel slide-dn">
           {NAV_LINKS.map(({ label, to, href, external }) =>
             external ? (
               <a

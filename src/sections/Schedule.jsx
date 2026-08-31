@@ -10,8 +10,8 @@ export default function Schedule({ onBook, bookedSlots, darkBg = true }) {
   const [activeDay, setActiveDay] = useState("Monday");
 
   return (
-    <section id="schedule" style={{ background: darkBg ? "var(--color-bg-dark)" : "var(--color-bg)", padding: "100px 40px" }}>
-      <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+    <section id="schedule" className="page-section page-section--dark" style={{ background: darkBg ? "var(--color-bg-dark)" : "var(--color-bg)" }}>
+      <div className="page-container" style={{ maxWidth: 1000 }}>
 
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: 56 }}>

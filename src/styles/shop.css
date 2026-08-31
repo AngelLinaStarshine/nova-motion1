@@ -33,6 +33,18 @@
   }
 }
 
+@media (min-width: 768px) {
+  .shop-app {
+    max-width: 520px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shop-app {
+    max-width: 560px;
+  }
+}
+
 .shop-screen {
   flex: 1;
   overflow-y: auto;

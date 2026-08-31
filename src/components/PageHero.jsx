@@ -29,10 +29,8 @@ export default function PageHero({ label, title, subtitle, bgImage }) {
           : "var(--color-bg-warm)",
       }}
     >
-      {/* Decorative line left */}
-      <div style={{ position: "absolute", top: "30%", left: "6%", width: 1, height: 120, background: "linear-gradient(to bottom, transparent, var(--color-border), transparent)", opacity: 0.7 }} />
-      {/* Decorative line right */}
-      <div style={{ position: "absolute", top: "30%", right: "6%", width: 1, height: 120, background: "linear-gradient(to bottom, transparent, var(--color-border), transparent)", opacity: 0.7 }} />
+      <div className="page-hero-decor page-hero-decor-left" />
+      <div className="page-hero-decor page-hero-decor-right" />
 
       <span
         className="section-label fade-up"

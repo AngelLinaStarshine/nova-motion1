@@ -16,11 +16,11 @@ export default function Classes({ onClassClick }) {
   const visible = filter === "All" ? CLASSES : CLASSES.filter((c) => c.category === filter);
 
   return (
-    <section id="classes" style={{ padding: "110px 40px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+    <section id="classes" className="page-section">
+      <div className="page-container">
 
         {/* Header row */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 }}>
+        <div className="section-header-row">
           <div>
             <span className="section-label">Our Classes</span>
             <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)" }}>

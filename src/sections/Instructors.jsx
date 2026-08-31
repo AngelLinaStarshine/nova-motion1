@@ -10,8 +10,8 @@ import { TEAM } from "../data/team.js";
 
 export default function Instructors() {
   return (
-    <section style={{ background: "var(--color-bg-warm)", padding: "80px 40px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto", textAlign: "center" }}>
+    <section className="page-section page-section--warm page-section--center">
+      <div className="page-container">
         <span className="section-label">Meet Your Instructors</span>
         <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)", marginBottom: 52 }}>
           Guided by <em style={{ color: "var(--color-gold)" }}>experts.</em>

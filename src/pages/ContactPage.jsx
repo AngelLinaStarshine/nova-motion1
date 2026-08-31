@@ -70,17 +70,8 @@ export default function ContactPage({ onToastShow }) {
         subtitle="Questions, feedback, corporate enquiries — our team replies within one business day."
       />
 
-      <section style={{ padding: "80px 40px" }}>
-        <div
-          style={{
-            maxWidth: 1100,
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1.5fr",
-            gap: 80,
-            alignItems: "flex-start",
-          }}
-        >
+      <section className="page-section">
+        <div className="contact-layout">
           {/* ── Left: info + map ── */}
           <div>
             {INFO.map((block) => (
@@ -156,7 +147,7 @@ export default function ContactPage({ onToastShow }) {
                 <span className="section-label">Send a message</span>
 
                 {/* Name + email row */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div className="form-row-2">
                   <div>
                     <input
                       className="form-input"

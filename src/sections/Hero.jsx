@@ -14,24 +14,11 @@ export default function Hero({ onScrollTo }) {
   ];
 
   return (
-    <section
-      id="home"
-      className="hero-main"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <div style={{ position: "absolute", top: "10%", right: "5%", width: 380, height: 380, borderRadius: "50%", border: "1px solid #e8e2d8", opacity: 0.5, pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "15%", left: "3%", width: 240, height: 240, borderRadius: "50%", border: "1px solid #e8e2d8", opacity: 0.4, pointerEvents: "none" }} />
-      <div style={{ position: "absolute", top: "20%", left: "8%", width: 1, height: 200, background: "linear-gradient(to bottom, transparent, #d4c9b8, transparent)", opacity: 0.6 }} />
-      <div style={{ position: "absolute", top: "20%", right: "8%", width: 1, height: 200, background: "linear-gradient(to bottom, transparent, #d4c9b8, transparent)", opacity: 0.6 }} />
+    <section id="home" className="hero-main">
+      <div className="hero-decor hero-decor-circle-lg" />
+      <div className="hero-decor hero-decor-circle-sm" />
+      <div className="hero-decor hero-decor-line hero-decor-line-left" />
+      <div className="hero-decor hero-decor-line hero-decor-line-right" />
 
       <div
         className="hero-brand-lockup fade-up"
@@ -55,11 +42,11 @@ export default function Hero({ onScrollTo }) {
         </span>
       </h1>
 
-      <p className="body-text fade-up" style={{ maxWidth: 520, margin: "32px auto 44px", fontSize: 20, animationDelay: "0.35s" }}>
+      <p className="body-text fade-up hero-lead" style={{ animationDelay: "0.35s" }}>
         Boutique Pilates reimagined — reformer flows, restorative stretching, and classes designed to transform your body and calm your mind.
       </p>
 
-      <div className="fade-up" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", animationDelay: "0.5s" }}>
+      <div className="fade-up hero-actions" style={{ animationDelay: "0.5s" }}>
         <button type="button" className="btn-primary" onClick={() => onScrollTo("schedule")}>
           View Schedule
         </button>
@@ -68,23 +55,15 @@ export default function Hero({ onScrollTo }) {
         </button>
       </div>
 
-      <div
-        className="fade-up hero-marquee-slot"
-        style={{
-          alignSelf: "stretch",
-          width: "100%",
-          marginTop: 36,
-          animationDelay: "0.55s",
-        }}
-      >
+      <div className="fade-up hero-marquee-slot" style={{ animationDelay: "0.55s" }}>
         <Marquee />
       </div>
 
-      <div className="fade-up hero-stats" style={{ display: "flex", gap: 48, marginTop: 28, marginBottom: 40, flexWrap: "wrap", justifyContent: "center", animationDelay: "0.65s" }}>
+      <div className="fade-up hero-stats" style={{ animationDelay: "0.65s" }}>
         {STATS.map(({ num, label }) => (
           <div key={label} className="hero-stat">
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 49, fontWeight: 300, color: "var(--color-text)", lineHeight: 1.1 }}>{num}</div>
-            <div style={{ fontSize: 15, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 10 }}>{label}</div>
+            <div className="hero-stat-value">{num}</div>
+            <div className="hero-stat-label">{label}</div>
           </div>
         ))}
       </div>

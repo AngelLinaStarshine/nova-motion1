@@ -40,7 +40,7 @@ export default function MembershipPage({ onPlanClick }) {
       <Membership onPlanClick={onPlanClick} />
 
       {/* FAQ */}
-      <section style={{ padding: "90px 40px", maxWidth: 760, margin: "0 auto" }}>
+      <section className="page-section page-section--center page-section--narrow">
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span className="section-label">Frequently Asked</span>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>

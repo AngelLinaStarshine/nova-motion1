@@ -31,8 +31,8 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section style={{ background: "var(--color-bg-dark)", padding: "90px 40px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <section className="page-section page-section--dark">
+      <div className="page-container" style={{ maxWidth: 1100 }}>
         <span className="section-label" style={{ textAlign: "center", display: "block" }}>
           What Members Say
         </span>

@@ -20,7 +20,7 @@ export default function CTA({ onToast }) {
   };
 
   return (
-    <section style={{ padding: "90px 40px", textAlign: "center" }}>
+    <section className="page-section page-section--center">
       <div style={{ maxWidth: 540, margin: "0 auto" }}>
         <span className="section-label">Join the Community</span>
         <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)", marginBottom: 16 }}>

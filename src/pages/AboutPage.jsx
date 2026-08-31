@@ -56,14 +56,14 @@ export default function AboutPage() {
       <About onClasses={() => navigate("/classes")} />
 
       {/* ── Full-width studio image ── */}
-      <div style={{ width: "100%", height: 480, overflow: "hidden" }}>
+      <div className="about-studio-wide">
         {/* 📸 Replace with: <img src={studioWide} alt="Nova Motion studio" style={{ width:"100%", height:"100%", objectFit:"cover" }} /> */}
         <ImagePlaceholder label="studio-wide.jpg (1200×600)" height="480px" />
       </div>
 
       {/* ── Values grid ── */}
-      <section style={{ padding: "100px 40px", background: "var(--color-bg-warm)" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      <section className="page-section page-section--warm page-section--center">
+        <div className="page-container" style={{ maxWidth: 1100 }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span className="section-label">What We Stand For</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>
@@ -89,47 +89,25 @@ export default function AboutPage() {
       <Instructors />
 
       {/* ── Studio timeline ── */}
-      <section style={{ padding: "100px 40px" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <section className="page-section page-section--center">
+        <div className="page-container about-timeline-wrap">
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span className="section-label">Since 2025</span>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-title)", fontWeight: 300 }}>
               Our journey
             </h2>
           </div>
-          <div style={{ position: "relative" }}>
-            {/* Vertical line */}
-            <div
-              style={{
-                position: "absolute", left: 72, top: 0, bottom: 0,
-                width: 1, background: "var(--color-border)",
-              }}
-            />
+          <div className="about-timeline">
+            <div className="about-timeline-line" />
             {TIMELINE.map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex", gap: 32, marginBottom: 40,
-                  alignItems: "flex-start",
-                }}
-              >
-                <div style={{ minWidth: 72, textAlign: "right", paddingTop: 2 }}>
+              <div key={i} className="about-timeline-item">
+                <div className="about-timeline-year">
                   <span style={{ fontFamily: "var(--font-display)", fontSize: 26, color: "var(--color-gold)", fontWeight: 300 }}>
                     {item.year}
                   </span>
                 </div>
-                {/* Dot */}
-                <div
-                  style={{
-                    width: 10, height: 10, borderRadius: "50%",
-                    background: "var(--color-gold)",
-                    marginTop: 6, flexShrink: 0,
-                    position: "relative", zIndex: 1,
-                  }}
-                />
-                <p style={{ fontSize: 19, color: "var(--color-text-muted)", lineHeight: 1.7, fontWeight: 300, paddingTop: 0, flex: 1 }}>
-                  {item.event}
-                </p>
+                <div className="about-timeline-dot" />
+                <p className="about-timeline-text">{item.event}</p>
               </div>
             ))}
           </div>
@@ -137,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <div style={{ textAlign: "center", padding: "70px 40px", background: "var(--color-bg-dark)" }}>
+      <div className="about-cta-band">
         <span className="section-label">Join us</span>
         <h3 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-section-heading-sm)", fontWeight: 300, color: "var(--color-text-inv)", marginBottom: 24 }}>
           Come move with us.

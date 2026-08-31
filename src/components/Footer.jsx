@@ -55,17 +55,10 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--color-bg-dark)", padding: "72px 40px 40px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+    <footer className="site-footer">
+      <div className="page-container">
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.4fr repeat(3, 1fr)",
-            gap: 48,
-            marginBottom: 64,
-          }}
-        >
+        <div className="footer-grid">
           <div>
             <img
               src={LOGO_SRC}
@@ -211,19 +204,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div
-          style={{
-            borderTop: "1px solid #1e1e1e",
-            borderBottom: "1px solid #1e1e1e",
-            padding: "32px 0",
-            marginBottom: 32,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 24,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="footer-newsletter">
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 26, color: "var(--color-text-inv)", marginBottom: 4 }}>
               Your first class is free.
@@ -237,16 +218,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: 12,
-            marginBottom: 20,
-          }}
-        >
+        <div className="footer-bottom">
           <span style={{ fontSize: 16, color: "#2e2e2e" }}>
             © {new Date().getFullYear()} Nova Motion Pilates Studio. All rights reserved.
           </span>

@@ -15,11 +15,11 @@ export default function Collection({ onAddToCart }) {
   const visible = filter === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
 
   return (
-    <section id="collection" style={{ padding: "110px 40px" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+    <section id="collection" className="page-section">
+      <div className="page-container">
 
         {/* Header row */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 }}>
+        <div className="section-header-row">
           <div>
             <span className="section-label">Studio Collection</span>
             <h2 className="display-heading" style={{ fontSize: "var(--fs-section-title)" }}>

@@ -8,21 +8,8 @@ export default function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "80px 40px",
-        background: "var(--color-bg)",
-      }}
-    >
-      <span style={{ fontFamily: "var(--font-display)", fontSize: 155, fontWeight: 300, color: "var(--color-border)", lineHeight: 1 }}>
-        404
-      </span>
+    <div className="not-found-page">
+      <span className="not-found-code">404</span>
       <div style={{ width: 1, height: 60, background: "var(--color-border)", margin: "16px auto" }} />
       <h2 style={{ fontFamily: "var(--font-display)", fontSize: 41, fontWeight: 300, marginBottom: 16 }}>
         Page not found

@@ -6,8 +6,8 @@ import { MEMBERSHIPS } from "../data/membership.js";
 
 export default function Membership({ onSelectPlan }) {
   return (
-    <section id="membership" style={{ background: "var(--color-bg-warm)", padding: "110px 40px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <section id="membership" className="page-section page-section--warm">
+      <div className="page-container" style={{ maxWidth: 1100 }}>
 
         {/* Heading */}
         <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -41,7 +41,7 @@ export default function Membership({ onSelectPlan }) {
 
               {/* Price */}
               <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 6 }}>
-                <span style={{ fontFamily: "var(--font-display)", fontSize: 67, fontWeight: 300, color: plan.popular ? "var(--color-text-inv)" : "var(--color-text)" }}>
+                <span className="membership-price" style={{ color: plan.popular ? "var(--color-text-inv)" : "var(--color-text)" }}>
                   ${plan.price}
                 </span>
                 <span style={{ fontSize: 17, color: plan.popular ? "#8c857e" : "var(--color-text-faint)" }}>/mo</span>
