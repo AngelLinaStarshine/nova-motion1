@@ -17,6 +17,7 @@ export const NAVBAR_LOGO_SRC = "/logo-navbar.png";
 /** Large mark behind hero “Pilates Studio” line */
 export const HERO_PILATES_WATERMARK_SRC = "/logo-hero-pilates-watermark.png";
 export const LOGO_ALT = "Nova Motion";
+export const BRAND_NAME = "Nova Motion";
 
 export const STUDIO_EMAIL = "novamotion.ca@gmail.com";
 export const STUDIO_PHONE_DISPLAY = "416-820-5847";

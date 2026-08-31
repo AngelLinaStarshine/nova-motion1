@@ -2,7 +2,6 @@
 //  NOVA MOTION — Hero Section
 // ─────────────────────────────────────────────────────
 
-import { HERO_PILATES_WATERMARK_SRC } from "@/data/brand";
 import Marquee from "@/sections/Marquee";
 
 export default function Hero({ onScrollTo }) {
@@ -20,13 +19,7 @@ export default function Hero({ onScrollTo }) {
       <div className="hero-decor hero-decor-line hero-decor-line-left" />
       <div className="hero-decor hero-decor-line hero-decor-line-right" />
 
-      <div
-        className="hero-brand-lockup fade-up"
-        style={{
-          animationDelay: "0.1s",
-          ["--hero-logo"]: `url('${HERO_PILATES_WATERMARK_SRC}')`,
-        }}
-      >
+      <div className="hero-brand-lockup fade-up" style={{ animationDelay: "0.1s" }}>
         <span className="section-label">Pilates Studio · Est. 2025</span>
       </div>
 
@@ -43,7 +36,7 @@ export default function Hero({ onScrollTo }) {
       </h1>
 
       <p className="body-text fade-up hero-lead" style={{ animationDelay: "0.35s" }}>
-        Boutique Pilates reimagined — reformer flows, restorative stretching, and classes designed to transform your body and calm your mind.
+        Boutique Pilates reimagined, reformer flows, restorative stretching, and classes designed to transform your body and calm your mind.
       </p>
 
       <div className="fade-up hero-actions" style={{ animationDelay: "0.5s" }}>

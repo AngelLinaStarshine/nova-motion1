@@ -147,33 +147,15 @@ button {
   color: var(--color-text-muted);
 }
 
-/* Hero: logo watermark behind “Pilates Studio” line */
+/* Hero eyebrow above main headline */
 .hero-brand-lockup {
-  position: relative;
   display: inline-block;
-  padding: 0.75em clamp(1rem, 5vw, 5rem) 0.9em;
+  padding: 0.25em 0 0.5em;
   margin-bottom: 4px;
   max-width: 100%;
 }
-.hero-brand-lockup::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(900px, 92vw);
-  height: min(420px, 48vw);
-  background-image: var(--hero-logo, url("/logo-hero-pilates-watermark.png"));
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.28;
-  pointer-events: none;
-  z-index: 0;
-}
+
 .hero-brand-lockup .section-label {
-  position: relative;
-  z-index: 1;
   margin-bottom: 0;
 }
 
@@ -290,36 +272,128 @@ button {
 .site-header {
   background: #0a0a0a;
   border-bottom: 1px solid rgba(184, 151, 90, 0.28);
-  --header-height: clamp(3.75rem, 11vw, 7.75rem);
+  --header-height: clamp(4.5rem, 12vw, 6.75rem);
+  --navbar-brand-height: clamp(3.25rem, 9vw, 5.5rem);
   padding-top: env(safe-area-inset-top, 0px);
 }
 
-.site-header .navbar-logo-img {
-  height: clamp(2.5rem, 8vw, 7.375rem);
+.navbar-brand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.navbar-brand-cycle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--navbar-brand-height);
+  min-width: clamp(7.5rem, 22vw, 12.5rem);
+}
+
+.navbar-brand-logo,
+.navbar-brand-wordmark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  will-change: opacity, transform;
+}
+
+.navbar-brand-logo {
+  height: var(--navbar-brand-height);
   width: auto;
-  max-height: min(7.375rem, 14vh);
+  max-height: min(5.5rem, 16vh);
   display: block;
+  animation: navbar-brand-logo 8s ease-in-out infinite;
+}
+
+.navbar-brand-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 0.9rem + 2.2vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #f7f4ef;
+  white-space: nowrap;
+  animation: navbar-brand-wordmark 8s ease-in-out infinite;
+}
+
+.navbar-brand-wordmark em {
+  font-style: normal;
+  color: var(--color-gold);
+}
+
+@keyframes navbar-brand-logo {
+  0%, 38% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  46%, 88% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.88);
+  }
+  96%, 100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes navbar-brand-wordmark {
+  0%, 38% {
+    opacity: 0;
+    transform: translateY(calc(-50% + 8px));
+  }
+  46%, 88% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+  96%, 100% {
+    opacity: 0;
+    transform: translateY(calc(-50% - 8px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-brand-logo {
+    animation: none;
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .navbar-brand-wordmark {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
   .site-header {
-    --header-height: clamp(3.5rem, 12vw, 5.5rem);
+    --header-height: clamp(4rem, 13vw, 5.25rem);
+    --navbar-brand-height: clamp(3rem, 11vw, 4.25rem);
   }
 
-  .site-header .navbar-logo-img {
-    height: clamp(2.35rem, 10vw, 4.5rem);
-    max-height: min(4.5rem, 12vh);
+  .navbar-brand-cycle {
+    min-width: clamp(6.5rem, 24vw, 9.5rem);
   }
 }
 
 @media (max-width: 640px) {
   .site-header {
-    --header-height: 3.5rem;
+    --header-height: 4rem;
+    --navbar-brand-height: 3.15rem;
   }
 
-  .site-header .navbar-logo-img {
-    height: 2.5rem;
-    max-height: 2.5rem;
+  .navbar-brand-cycle {
+    min-width: 6.75rem;
+  }
+
+  .navbar-brand-wordmark {
+    font-size: 1.28rem;
   }
 }
 
@@ -1127,7 +1201,7 @@ textarea.form-input {
   }
 
   .hero-brand-lockup {
-    padding: 0.75em clamp(1rem, 6vw, 3rem) 1em;
+    padding: 0.15em 0 0.35em;
   }
 
   .hero-decor-line {
@@ -1171,13 +1245,7 @@ textarea.form-input {
   }
 
   .hero-brand-lockup {
-    padding: 0.35em clamp(0.5rem, 3vw, 1rem) 0.5em;
-  }
-
-  .hero-brand-lockup::before {
-    width: min(92vw, 18rem);
-    height: min(140px, 36vw);
-    opacity: 0.18;
+    padding: 0.15em 0 0.35em;
   }
 
   .hero-lead {
@@ -1231,7 +1299,7 @@ textarea.form-input {
   }
 
   .site-header-inner {
-    min-height: 3.5rem;
+    min-height: 4rem;
     padding-inline: 0.85rem;
   }
 

@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { NAVBAR_LOGO_SRC, LOGO_ALT } from "../data/brand";
+import { NAVBAR_LOGO_SRC, LOGO_ALT, BRAND_NAME } from "../data/brand";
 import { SHOP_URL, isShopExternal } from "@/config/urls";
 
 const NAV_LINKS = [
@@ -43,24 +43,22 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
     >
       <div className="site-header-inner">
         <button
+          type="button"
+          className="navbar-brand-btn"
           onClick={() => navigate("/")}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            flexShrink: 0,
-            padding: 0,
-          }}
-          aria-label="Nova Motion home"
+          aria-label={`${BRAND_NAME} home`}
         >
-          <img
-            src={NAVBAR_LOGO_SRC}
-            alt={LOGO_ALT}
-            decoding="async"
-            className="navbar-logo-img"
-          />
+          <span className="navbar-brand-cycle" aria-hidden="true">
+            <img
+              src={NAVBAR_LOGO_SRC}
+              alt=""
+              decoding="async"
+              className="navbar-brand-logo"
+            />
+            <span className="navbar-brand-wordmark">
+              Nova <em>Motion</em>
+            </span>
+          </span>
         </button>
 
         <nav className="navbar-desktop" style={{ display: "flex", gap: 28, alignItems: "center", visibility: "visible" }}>
