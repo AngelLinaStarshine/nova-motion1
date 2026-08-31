@@ -48,6 +48,8 @@ function ScrollToTop() {
 
 function Shell() {
   const cart = useCart();
+  const location = useLocation();
+  const isShop = location.pathname === "/collection";
   const [cartOpen,    setCartOpen]    = useState(false);
   const [toast,       setToast]       = useState(null);
   const [bookedSlots, setBookedSlots] = useState(new Set());
@@ -75,7 +77,8 @@ function Shell() {
 
   const handleAddToCart = useCallback((product) => {
     cart.add(product);
-    showToast(`✓  ${product.name} added to cart`);
+    const label = product.lineName ?? product.name;
+    showToast(`✓  ${label} added to cart`);
   }, [cart, showToast]);
 
   const handleCheckout = useCallback(() => {
@@ -88,14 +91,23 @@ function Shell() {
     <>
       <ScrollToTop />
 
-      <Navbar cartCount={cart.count} onCartOpen={() => setCartOpen(true)} />
+      {!isShop && <Navbar cartCount={cart.count} onCartOpen={() => setCartOpen(true)} />}
 
       <main>
         <Routes>
           <Route path="/"           element={<HomePage        onToastShow={showToast} />} />
           <Route path="/schedule"   element={<SchedulePage    bookedSlots={bookedSlots} onBook={handleBook} />} />
           <Route path="/classes"    element={<ClassesPage     onClassClick={setClassModal} />} />
-          <Route path="/collection" element={<ShopPage        onAddToCart={handleAddToCart} />} />
+          <Route
+            path="/collection"
+            element={
+              <ShopPage
+                onAddToCart={handleAddToCart}
+                cartCount={cart.count}
+                onCartOpen={() => setCartOpen(true)}
+              />
+            }
+          />
           <Route path="/membership" element={<MembershipPage  onPlanClick={setMemberModal} />} />
           <Route path="/about"      element={<AboutPage />} />
           <Route path="/contact"    element={<ContactPage     onToastShow={showToast} />} />
@@ -103,7 +115,7 @@ function Shell() {
         </Routes>
       </main>
 
-      <Footer />
+      {!isShop && <Footer />}
 
       {cartOpen && (
         <CartPanel

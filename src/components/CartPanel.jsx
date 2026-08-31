@@ -33,9 +33,12 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
               <p style={{ fontSize: 17}}>Browse our collection and add items.</p>
             </div>
           ) : (
-            items.map((item) => (
+            items.map((item) => {
+              const lineId = item.cartId ?? item.id;
+              const lineName = item.lineName ?? item.name;
+              return (
               <div
-                key={item.id}
+                key={lineId}
                 style={{
                   display: "flex",
                   gap: 16,
@@ -55,30 +58,31 @@ export default function CartPanel({ items, onClose, onUpdate, onRemove, onChecko
                   }}
                 >
                   {item.image
-                    ? <img src={item.image} alt={item.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    ? <img src={item.image} alt={lineName} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     : item.emoji}
                 </div>
 
                 {/* Name / price */}
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 20}}>{item.name}</div>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: 20}}>{lineName}</div>
                   <div style={{ fontSize: 17, color: "var(--color-text-faint)" }}>${item.price}</div>
                 </div>
 
                 {/* Qty controls */}
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <QtyBtn onClick={() => onUpdate(item.id, -1)}>−</QtyBtn>
+                  <QtyBtn onClick={() => onUpdate(lineId, -1)}>−</QtyBtn>
                   <span style={{ fontSize: 18, minWidth: 18, textAlign: "center" }}>{item.qty}</span>
-                  <QtyBtn onClick={() => onUpdate(item.id, 1)}>+</QtyBtn>
+                  <QtyBtn onClick={() => onUpdate(lineId, 1)}>+</QtyBtn>
                   <button
-                    onClick={() => onRemove(item.id)}
+                    onClick={() => onRemove(lineId)}
                     style={{ background: "none", border: "none", cursor: "pointer", color: "#c0b8b0", fontSize: 18, marginLeft: 4, padding: 0 }}
                   >
                     ✕
                   </button>
                 </div>
               </div>
-            ))
+              );
+            })
           )}
         </div>
 

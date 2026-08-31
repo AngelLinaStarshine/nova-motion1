@@ -9,7 +9,7 @@ import { STUDIO_EMAIL, STUDIO_PHONE_DISPLAY, STUDIO_PHONE_TEL } from "@/data/bra
 const INFO = [
   {
     heading: "Visit us",
-    lines: ["123 Wellness Avenue", "The Annex, Toronto", "ON  M5R 2J4"],
+    lines: ["Coming soon"],
     icon: "📍",
   },
   {
@@ -122,9 +122,8 @@ export default function ContactPage({ onToastShow }) {
             >
               <span style={{ fontSize: 41}}>🗺️</span>
               <span style={{ fontSize: 15, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-faint)" }}>
-                Embed Google Map here
+                Coming soon
               </span>
-              <span style={{ fontSize: 16, color: "#b0a9a2" }}>Replace with an &lt;iframe&gt; from Google Maps</span>
             </div>
           </div>
 

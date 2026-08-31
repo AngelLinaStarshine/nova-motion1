@@ -6,14 +6,15 @@
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { NAVBAR_LOGO_SRC, LOGO_ALT } from "../data/brand";
+import { SHOP_URL, isShopExternal } from "@/config/urls";
 
 const NAV_LINKS = [
-  { label: "Schedule",   to: "/schedule"   },
-  { label: "Classes",    to: "/classes"    },
-  { label: "Collection", to: "/collection" },
+  { label: "Schedule",   to: "/schedule" },
+  { label: "Classes",    to: "/classes" },
+  { label: "Shop",       to: "/collection", href: SHOP_URL, external: isShopExternal() },
   { label: "Membership", to: "/membership" },
-  { label: "About",      to: "/about"      },
-  { label: "Contact",    to: "/contact"    },
+  { label: "About",      to: "/about" },
+  { label: "Contact",    to: "/contact" },
 ];
 
 export default function Navbar({ cartCount = 0, onCartOpen }) {
@@ -74,15 +75,21 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
         </button>
 
         <nav className="navbar-desktop" style={{ display: "flex", gap: 28, alignItems: "center", visibility: "visible" }}>
-          {NAV_LINKS.map(({ label, to }) => (
-            <NavLink
-              key={to}
-              to={to}
-              className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
-            >
-              {label}
-            </NavLink>
-          ))}
+          {NAV_LINKS.map(({ label, to, href, external }) =>
+            external ? (
+              <a key={label} href={href} className="navbar-link">
+                {label}
+              </a>
+            ) : (
+              <NavLink
+                key={to}
+                to={to}
+                className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+              >
+                {label}
+              </NavLink>
+            )
+          )}
         </nav>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16, flexShrink: 0 }}>
@@ -159,16 +166,27 @@ export default function Navbar({ cartCount = 0, onCartOpen }) {
 
       {mobileOpen && (
         <div className="navbar-mobile-panel slide-dn" style={{ padding: "24px 40px 32px" }}>
-          {NAV_LINKS.map(({ label, to }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => setMobileOpen(false)}
-              className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
-            >
-              {label}
-            </NavLink>
-          ))}
+          {NAV_LINKS.map(({ label, to, href, external }) =>
+            external ? (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                className="navbar-link"
+              >
+                {label}
+              </a>
+            ) : (
+              <NavLink
+                key={to}
+                to={to}
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) => (isActive ? "navbar-link active" : "navbar-link")}
+              >
+                {label}
+              </NavLink>
+            )
+          )}
           <button
             type="button"
             className="btn-gold"

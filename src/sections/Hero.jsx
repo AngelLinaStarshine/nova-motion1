@@ -80,11 +80,11 @@ export default function Hero({ onScrollTo }) {
         <Marquee />
       </div>
 
-      <div className="fade-up" style={{ display: "flex", gap: 48, marginTop: 28, flexWrap: "wrap", justifyContent: "center", animationDelay: "0.65s" }}>
+      <div className="fade-up hero-stats" style={{ display: "flex", gap: 48, marginTop: 28, marginBottom: 40, flexWrap: "wrap", justifyContent: "center", animationDelay: "0.65s" }}>
         {STATS.map(({ num, label }) => (
-          <div key={label} style={{ textAlign: "center" }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 49, fontWeight: 300, color: "var(--color-text)" }}>{num}</div>
-            <div style={{ fontSize: 15, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 4 }}>{label}</div>
+          <div key={label} className="hero-stat">
+            <div style={{ fontFamily: "var(--font-display)", fontSize: 49, fontWeight: 300, color: "var(--color-text)", lineHeight: 1.1 }}>{num}</div>
+            <div style={{ fontSize: 15, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--color-text-faint)", marginTop: 10 }}>{label}</div>
           </div>
         ))}
       </div>

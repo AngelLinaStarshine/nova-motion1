@@ -1,34 +1,29 @@
-// ─────────────────────────────────────────────────────
-//  NOVA MOTION — useCart Hook
-//  Manages cart items: add, remove, update quantity,
-//  compute totals. Used by CartPanel + Collection section.
-// ─────────────────────────────────────────────────────
-
 import { useState, useCallback } from "react";
 
 export function useCart() {
   const [items, setItems] = useState([]);
 
   const add = useCallback((product) => {
+    const lineId = product.cartId ?? product.id;
     setItems((prev) => {
-      const existing = prev.find((i) => i.id === product.id);
+      const existing = prev.find((i) => (i.cartId ?? i.id) === lineId);
       if (existing) {
         return prev.map((i) =>
-          i.id === product.id ? { ...i, qty: i.qty + 1 } : i
+          (i.cartId ?? i.id) === lineId ? { ...i, qty: i.qty + 1 } : i
         );
       }
-      return [...prev, { ...product, qty: 1 }];
+      return [...prev, { ...product, cartId: lineId, qty: 1 }];
     });
   }, []);
 
   const remove = useCallback((id) => {
-    setItems((prev) => prev.filter((i) => i.id !== id));
+    setItems((prev) => prev.filter((i) => (i.cartId ?? i.id) !== id));
   }, []);
 
   const updateQty = useCallback((id, delta) => {
     setItems((prev) =>
       prev.map((i) =>
-        i.id === id ? { ...i, qty: Math.max(1, i.qty + delta) } : i
+        (i.cartId ?? i.id) === id ? { ...i, qty: Math.max(1, i.qty + delta) } : i
       )
     );
   }, []);

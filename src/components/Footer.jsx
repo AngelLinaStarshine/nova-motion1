@@ -14,6 +14,7 @@ import {
   STUDIO_PHONE_TEL,
   STUDIO_WHATSAPP_URL,
 } from "../data/brand";
+import { SHOP_URL, isShopExternal } from "@/config/urls";
 
 const COLS = [
   {
@@ -21,7 +22,7 @@ const COLS = [
     links: [
       { label: "Schedule", to: "/schedule" },
       { label: "Classes", to: "/classes" },
-      { label: "Collection", to: "/collection" },
+      { label: "Shop", to: "/collection", href: SHOP_URL, external: isShopExternal() },
       { label: "Membership", to: "/membership" },
       { label: "About", to: "/about" },
       { label: "Contact", to: "/contact" },
@@ -41,7 +42,7 @@ const COLS = [
     links: [
       { label: STUDIO_EMAIL, href: `mailto:${STUDIO_EMAIL}` },
       { label: STUDIO_PHONE_DISPLAY, href: `tel:${STUDIO_PHONE_TEL}` },
-      { label: "123 Wellness Ave, Toronto", to: null },
+      { label: "Location coming soon", to: null },
       { label: "Mon – Fri  6 am – 9 pm", to: null },
     ],
   },
@@ -134,7 +135,28 @@ export default function Footer() {
                 {col.heading}
               </div>
               {col.links.map((link) =>
-                link.to ? (
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={{
+                      display: "block",
+                      fontSize: 17,
+                      color: "#4a4540",
+                      textDecoration: "none",
+                      marginBottom: 12,
+                      transition: "color 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.color = "#f7f4ef";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.color = "#4a4540";
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ) : link.to ? (
                   <Link
                     key={link.label}
                     to={link.to}

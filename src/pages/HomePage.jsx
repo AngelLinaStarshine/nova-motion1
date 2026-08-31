@@ -1,14 +1,13 @@
 // ─────────────────────────────────────────────────────
 //  NOVA MOTION — Home Page
-//  Combines Hero (includes ticker above stats) → About → Testimonials → CTA
-//  Full schedule / classes / shop live on their own pages.
 // ─────────────────────────────────────────────────────
 
 import { useNavigate } from "react-router-dom";
-import Hero         from "@/sections/Hero";
-import About        from "@/sections/About";
-import Testimonials from "@/sections/Testimonials";
-import CTA          from "@/sections/CTA";
+import Hero             from "@/sections/Hero";
+import About            from "@/sections/About";
+import CollectionTeaser from "@/sections/CollectionTeaser";
+import Testimonials     from "@/sections/Testimonials";
+import CTA              from "@/sections/CTA";
 
 export default function HomePage({ onToastShow }) {
   const navigate = useNavigate();
@@ -22,6 +21,7 @@ export default function HomePage({ onToastShow }) {
         }}
       />
       <About onClasses={() => navigate("/classes")} />
+      <CollectionTeaser />
       <Testimonials />
       <CTA onSubmit={({ name }) => onToastShow(`✓  Welcome, ${name.split(" ")[0]}! We'll be in touch.`)} />
     </>
